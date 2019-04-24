@@ -47,26 +47,26 @@ function professorInfo() {
         </div>`)
 }
 
-function Prof(name, lastname, birthdate, mail, jmbgnum, subject) {
-    this.name = name
-    this.lastname = lastname
-    this.birthdate = birthdate
-    this.mail = mail
-    this.jmbg = jmbgnum
-    this.subject = subject
+function Prof(profname, proflastname, profbirthdate, profmail, profjmbgnum, profsubject) {
+    this.profname = profname
+    this.proflastname = proflastname
+    this.profbirthdate = profbirthdate
+    this.profmail = profmail
+    this.profjmbg = profjmbgnum
+    this.profsubject = profsubject
 }
 
 $(document).on('click', "#addprof", function () {
     let profname = $('#profname').val()
     let proflastName = $('#proflastname').val()
-    let profbirthdayx = $('#profbirthday').val()
+    let profbirthday = $('#profbirthday').val()
     let profgmail = $('#profemail').val()
     let profsocial = $('#profjmbg').val()
     let profsubject = $('#profsubject').val()
 
     let prtestnam = profnamereg.test(profname)
     let prtestlname = proflastnamereg.test(proflastName)
-    let prtestbirthd = profbirthdayreg.test(profbirthdayx)
+    let prtestbirthd = profbirthdayreg.test(profbirthday)
     let prtestmail = profmailreg.test(profgmail)
     let prtestsoc = profjmbgreg.test(profsocial)
     let prtestsub = subjctreg.test(profsubject)
@@ -114,13 +114,12 @@ $(document).on('click', "#addprof", function () {
     }
 
     if (prtestnam && prtestlname && prtestbirthd && prtestsoc && prtestmail && prtestsub) {
-        professors.push(new Prof(profname, profbirthdayx, profgmail, profsocial, profsubject))
+        professors.push(new Prof(profname, proflastName, profbirthday, profgmail, profsocial, profsubject))
         console.log(professors)
         localStorage.setItem('professors', JSON.stringify(professors))
         alert('Professor added!')
         $('#profform').hide(500)
         $('#mainsection').append(` <div class="tt">
-        <!--Text koji govori o skoli-->
         <h2 id="maintitle" class="mainttl">Dnevnik</h2>
         <h3 id="secondarytitle" class="secondaryttl">HighSchool</h3>
     </div>`)

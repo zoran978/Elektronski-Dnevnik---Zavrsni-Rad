@@ -9,8 +9,8 @@ let studenttable = () => {
         <tr>
             <th>First Name</th>
             <th>Last Name</th>
+            <th>Birthday</th>
             <th>Email</th>
-            <th>JMBG</th>
             <th>Date of entry</th>
         </tr>
     </thead>
@@ -29,7 +29,7 @@ let studenttable = () => {
     dateNow = day + "/" + month + "/" + year
 
     if (localStorage.getItem('students') === null) {
-        alert('No students here')
+        alert('No students here!')
     }
     else {
         for (i = 0; i < studentlist.length; i++) {

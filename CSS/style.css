@@ -148,10 +148,6 @@ body {
     margin: 0 auto 0 auto;
 }
 
-/* .afterlog {
-    display: none;
-} */
-
 .newcnt {
     display: flex;
     justify-content: center;
@@ -167,5 +163,13 @@ body {
 #mytable {
     width: 100vw;
     font-size: 0.9em;
+    text-align: center;
+    color: whitesmoke;
+}
+
+#mytable2 {
+    width: 100vw;
+    font-size: 0.9em;
+    text-align: center;
     color: whitesmoke;
 }

@@ -38,41 +38,24 @@
             <i class="fas fa-angle-double-left closebtn" id="closeit" onclick="fclose()"></i>
             <div class=" overlay-content">
                 <a href="index.html">Home</a>
-                <span onclick="login()" id="logbt">Log In</span>
-                <div class="afterlog">
-                    <span onclick="studentinfo()">Add Student</span>
-                    <span onclick="professorInfo()">Add Professor</span>
-                </div>
+                <span onclick="studentinfo()">Add Student</span>
+                <span onclick="professorInfo()">Add Professor</span>
                 <span onclick="studenttable()">View Students</span>
-                <span>View Professors</span>
+                <span onclick="professortable()">View Professors</span>
             </div>
-        </div>
-        <i class="fa fa-bars otvorimeni" id="openit" onclick="fopen()"></i>
+        </div> <i class="fa fa-bars otvorimeni" id="openit" onclick="fopen()"></i>
         <h1 id="dnevniktitle" class="dnevnikttl">Dnevnik</h1>
     </div>
     <div id="mainsection" class="main">
         <div class="tt">
             <h2 id="maintitle" class="mainttl">Dnevnik</h2>
             <h3 id="secondarytitle" class="secondaryttl">HighSchool</h3>
-            <!-- <table class="table table-md-responsive" id="mytable">
-                <thead class="thead-light">
-                    <tr>
-                        <th>First Name</th>
-                        <th>Last Name</th>
-                        <th>Email</th>
-                        <th>JMBG</th>
-                    </tr>
-                </thead>
-                <tbody>
-                </tbody>
-            </table> -->
         </div>
     </div>
     <script src="../JS/student.js"></script>
     <script src="../JS/prof.js"></script>
-    <script src="../JS/logmenu.js"></script>
-    <script src="../JS/login.js"></script>
     <script src="../JS/studentstable.js"></script>
+    <script src="../JS/proftable.js"></script>
 </body>
 
 </html>
