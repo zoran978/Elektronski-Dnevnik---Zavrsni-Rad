@@ -160,16 +160,42 @@ body {
     margin-top: 10%;
 }
 
+.newcntnt {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    top: 12%;
+    width: 100%;
+    text-align: center;
+    margin-top: 10%;
+}
+
 #mytable {
     width: 100vw;
-    font-size: 0.9em;
+    font-size: 0.8em;
     text-align: center;
     color: whitesmoke;
+    word-wrap: break-word;
 }
 
 #mytable2 {
     width: 100vw;
-    font-size: 0.9em;
+    font-size: 0.8em;
+    text-align: center;
+    color: whitesmoke;
+}
+
+.dismn {
+    display: none;
+}
+
+.remform {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     text-align: center;
     color: whitesmoke;
 }

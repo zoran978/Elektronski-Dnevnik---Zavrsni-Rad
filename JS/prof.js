@@ -1,18 +1,19 @@
+//getting values from user
 let profname = $('#profname').val()
 let proflastName = $('#proflastname').val()
 let profbirthdayx = $('#profbirthday').val()
 let profgmail = $('#profemail').val()
 let profsocial = $('#profjmbg').val()
-
+//reg exp to check those values
 let profnamereg = /^[a-z\s]*$/i
 let proflastnamereg = /^[a-z\s]*$/i
 let profbirthdayreg = /^[a-z0-9\!\@\#\$\%\^\&\*\(\)\_\+\,\<\.\>\/\?\;\:\'\"\[\]\{\}]+$/i
 let profmailreg = /^[a-z0-9\!\@\#\$\%\^\&\*\(\)\_\+\,\<\.\>\/\?\;\:\'\"\[\]\{\}]+$/i
 let profjmbgreg = /^[a-z0-9\!\@\#\$\%\^\&\*\(\)\_\+\,\<\.\>\/\?\;\:\'\"\[\]\{\}]+$/i
 let subjctreg = /^[a-z\s]*$/i
-
+//array where professors are stored
 let professors = new Array;
-
+//function that will open form page where we can add professor
 function professorInfo() {
     $('#myNav').css('width', '0%')
     $('#mainsection').empty()
@@ -46,7 +47,7 @@ function professorInfo() {
         <button type="button" value="Submit" id="addprof" class="btn btn-warning">Submit</button>
         </div>`)
 }
-
+//object for professor
 function Prof(profname, proflastname, profbirthdate, profmail, profjmbgnum, profsubject) {
     this.profname = profname
     this.proflastname = proflastname
@@ -55,7 +56,7 @@ function Prof(profname, proflastname, profbirthdate, profmail, profjmbgnum, prof
     this.profjmbg = profjmbgnum
     this.profsubject = profsubject
 }
-
+//checking if everything matchec reg exp
 $(document).on('click', "#addprof", function () {
     let profname = $('#profname').val()
     let proflastName = $('#proflastname').val()
@@ -112,18 +113,21 @@ $(document).on('click', "#addprof", function () {
     else {
         $('#profsubject').css('border', '1px solid green')
     }
-
+    //if everything does match and all fields are "true" we push our object in to an array and then we push that array in
+    //local storage
     if (prtestnam && prtestlname && prtestbirthd && prtestsoc && prtestmail && prtestsub) {
         professors.push(new Prof(profname, proflastName, profbirthday, profgmail, profsocial, profsubject))
         console.log(professors)
         localStorage.setItem('professors', JSON.stringify(professors))
         alert('Professor added!')
+        //here we are appending back our main background
         $('#profform').hide(500)
         $('#mainsection').append(` <div class="tt">
         <h2 id="maintitle" class="mainttl">Dnevnik</h2>
         <h3 id="secondarytitle" class="secondaryttl">HighSchool</h3>
     </div>`)
     }
+    //if user didnt fill out all of the fields in form we alert him about that
     else {
         alert('Please fill out all of the fields above')
     }

@@ -1,18 +1,18 @@
+//user input values
 let name = $('#name').val()
 let lastName = $('#lastname').val()
 let birthdayx = $('#birthday').val()
 let gmail = $('#email').val()
 let social = $('#jmbg').val()
-
+//reg exp
 let namereg = /^[a-z\s]*$/i
 let lastnamereg = /^[a-z\s]*$/i
 let birthdayreg = /^[a-z0-9\!\@\#\$\%\^\&\*\(\)\_\+\,\<\.\>\/\?\;\:\'\"\[\]\{\}]+$/i
 let mailreg = /^[a-z0-9\!\@\#\$\%\^\&\*\(\)\_\+\,\<\.\>\/\?\;\:\'\"\[\]\{\}]+$/i
 let jmbgreg = /^[a-z0-9\!\@\#\$\%\^\&\*\(\)\_\+\,\<\.\>\/\?\;\:\'\"\[\]\{\}]+$/i
-
+//array for students
 let students = new Array;
-
-
+//appends form for student info
 function studentinfo() {
     $('#myNav').css('width', '0%')
     $('#mainsection').empty()
@@ -42,7 +42,7 @@ function studentinfo() {
         <button type="button" value="Submit" id="addstudent" class="btn btn-warning">Submit</button>
         </div>`)
 }
-
+//object
 function Student(name, lastname, birthdate, mail, jmbgnum) {
     this.name = name
     this.lastname = lastname
@@ -50,7 +50,7 @@ function Student(name, lastname, birthdate, mail, jmbgnum) {
     this.mail = mail
     this.jmbgnum = jmbgnum
 }
-
+//validation of user input
 $(document).on('click', "#addstudent", function () {
     let name2 = $('#name').val()
     let lastName2 = $('#lastname').val()
@@ -98,11 +98,13 @@ $(document).on('click', "#addstudent", function () {
     else {
         $('#jmbg').css('border', '1px solid green')
     }
+    //if everything is ok then we push students in to an array and then we push that array in to the localstorage
     if (testnam && testlname && testbirthd && testsoc && testmail) {
         students.push(new Student(name2, lastName2, birthdayx2, gmail2, social2))
         console.log(students)
         localStorage.setItem('students', JSON.stringify(students))
         alert('Student added!')
+        //return main background
         $('#studentform').hide(500)
         $('#mainsection').append(` <div class="tt">
         <!--Text koji govori o skoli-->
@@ -110,6 +112,7 @@ $(document).on('click', "#addstudent", function () {
         <h3 id="secondarytitle" class="secondaryttl">HighSchool</h3>
     </div>`)
     }
+    //if user didnt fill out all of the fields we warn him
     else {
         alert('Please fill out all of the fields above')
     }
