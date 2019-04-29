@@ -12,6 +12,7 @@ let studenttable = () => {
             <th>Birthday</th>
             <th>Email</th>
             <th>Date of entry</th>
+            <th>Delete Student</th>
         </tr>
     </thead>
     <tbody>
@@ -34,31 +35,24 @@ let studenttable = () => {
   else {
     for (i = 0; i < studentlist.length; i++) {
       $('#mytable tbody').append(`
-                <tr>
+                <tr class="rows">
                 <td>` + studentlist[i].name + `</td>
                 <td>`+ studentlist[i].lastname + `</td>
                 <td>`+ studentlist[i].birthdate + `</td>
                 <td>`+ studentlist[i].mail + `</td>
                 <td>`+ dateNow + `</td>
+                <td><input type="checkbox" class="checkit"></td>
                 </tr>`)
     }
   }
-  //here we append from with where we can match student name and last name in order to delete them
-  //same should be done for professors
-  //NOT FINISHED!!!
-  $('#mainsection').append(`
-    <div class="remform">
-    <form>
-    <div class="form-group">
-      <label for="formGroupExampleInput">Name</label>
-      <input type="text" class="form-control" placeholder="Name" id="removestudentn">
-    </div>
-    <div class="form-group">
-      <label for="formGroupExampleInput2">Last</label>
-      <input type="text" class="form-control" placeholder="Last name" id="removestudentln">
-    </div>
-  </form>
-  <button class="btn btn-warning" onclick="removeStudentnow()">Remove Student</button>
-    </div>
-    `)
+
+  //appending id through for loop so different rows could have different ids
+  clsrw = $('.checkit')
+  length = clsrw.length
+  for (j = 0; j < length; j++) {
+    clsrw[j].id = 'a' + (j + 1)
+  }
+  $('#mainsection').append('<div class="btndiv"><button id="deletion" class="btn btn-danger">Delete Students</button></div>')
 }
+//ako je nase polje checkovano mozemo ga dohvatiti pomocu appendovanog ida ili neceg drugog,ali ako je checkovano da na klik
+//dugmeta proverimo sva polja koja su checkovana i onda redove u kojima se ona nalaze obrisemo

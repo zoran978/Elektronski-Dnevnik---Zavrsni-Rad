@@ -174,7 +174,7 @@ body {
 
 #mytable {
     width: 100vw;
-    font-size: 0.8em;
+    font-size: 0.7em;
     text-align: center;
     color: whitesmoke;
     word-wrap: break-word;
@@ -187,15 +187,23 @@ body {
     color: whitesmoke;
 }
 
+#gradtable {
+    width: 100vw;
+    font-size: 0.8em;
+    text-align: center;
+    color: whitesmoke;
+}
+
 .dismn {
     display: none;
 }
 
-.remform {
+.gradesdiv {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    position: relative;
     text-align: center;
-    color: whitesmoke;
+    color:whitesmoke;
 }
