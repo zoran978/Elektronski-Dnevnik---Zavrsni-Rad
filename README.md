@@ -18,3 +18,13 @@ Contains:
 7.Gallery
 
 8.Responsive design
+
+
+
+
+
+
+
+
+
+All Rights Reserved.
