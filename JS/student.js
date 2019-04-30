@@ -1,9 +1,3 @@
-//user input values
-let name = $('#name').val()
-let lastName = $('#lastname').val()
-let birthdayx = $('#birthday').val()
-let gmail = $('#email').val()
-let social = $('#jmbg').val()
 //reg exp
 let namereg = /^[a-z\s]*$/i
 let lastnamereg = /^[a-z\s]*$/i
@@ -106,10 +100,8 @@ $(document).on('click', "#addstudent", function () {
         alert('Student added!')
         //return main background
         $('#studentform').hide(500)
-        $('#mainsection').append(` <div class="tt">
-        <!--Text koji govori o skoli-->
-        <h2 id="maintitle" class="mainttl">Dnevnik</h2>
-        <h3 id="secondarytitle" class="secondaryttl">HighSchool</h3>
+        $('#mainsection').append(` <div>
+        <h3 id="secondarytitle" class="secondaryttl">University of web development</h3>
     </div>`)
     }
     //if user didnt fill out all of the fields we warn him

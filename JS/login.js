@@ -20,7 +20,7 @@ function newmenu() {
     $(".overlay").append('<div id="newcontent22" class="newcntnt"></div>');
     $("#newcontent22").append(
         `<form><div class="form-group"><input type="text" class="form-control"  placeholder="Username" id="username"></div><div class="form-group"><input type="password" class="form-control" placeholder="Password" id="passwrd"></div>
-      <button type="button" class="btn btn-primary" onclick="logIn()">Log In</button></form>`
+      <button type="button" class="btn btn-primary" id="darkmdd"  onclick="logIn()">Log In</button></form>`
     );
 }
 //function that removes log in form menu
