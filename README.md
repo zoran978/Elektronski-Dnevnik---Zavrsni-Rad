@@ -1,25 +1,20 @@
 # Elektronski-Dnevnik---Zavrsni-Rad
 
-Ova aplikacija sadrzi:
-
-1.Primitivni log in sistem na osnovu vec predefinisanih informacija
-
-2.Formu za dodavanje studenata koji se posle skladiste u localStorage
-
-3.Formu za dodavanje profesora koji se posle skladiste u localStorage
-
-4.Tabelu u kojoj mozemo da vidimo postojece studente i njihove informacije
-
-5.Tableu u kojoj mozemo da vidimo postojece profesore i njihove informacije
-
-6.Galeriju radjenju u grid-u
+Contains:
 
 
-Treba jos dodati:
+1.Log in system with predefined username and password for admin access (admin1 / 1234)
 
+2.Light/Dark mode button
 
-1.Mogucnost da se brisu studenti i profesori
+3.Form that adds students to localStorage
 
-2.Mogucnost da se dodaju ocene za studente i da se izracuna njihov prosek koji ce se takodje prikazati u posebnoj tabeli
+4.Table that displays our students by appending number of rows based on number of students
 
-3.Prilagoditi sajt racunarskom prikazu posto je trenutno mobile only i promeniti font.
+5.Form used for student grades
+
+6.Table that displays students with their grades and their final grade
+
+7.Gallery
+
+8.Responsive design
