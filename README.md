@@ -15,9 +15,14 @@ Contains:
 
 6.Table that displays students with their grades and their final grade
 
-7.Gallery
+7.Notes,where we can write notes about student activities
+
+8.Table where we display those notes with date
 
 8.Responsive design
+
+
+Site is also adapted both for Google Chrome and Mozilla Firefox.
 
 
 
