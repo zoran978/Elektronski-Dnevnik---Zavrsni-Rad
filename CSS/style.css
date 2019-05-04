@@ -147,6 +147,25 @@ body {
     text-align: center;
     color: whitesmoke;
     word-wrap: break-word;
+    table-layout: fixed
+}
+
+#gradtab {
+    width: 100vw;
+    font-size: 0.7em;
+    text-align: center;
+    color: whitesmoke;
+    word-wrap: break-word;
+    table-layout: fixed
+}
+
+#notetable {
+    width: 100vw;
+    font-size: 0.7em;
+    text-align: center;
+    color: whitesmoke;
+    word-wrap: break-word;
+    table-layout: fixed
 }
 
 .dismn {
@@ -163,6 +182,23 @@ body {
     width: 100%;
     text-align: center;
     margin-top: 10%;
+}
+
+.notecontent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    top: 12%;
+    width: 100%;
+    text-align: center;
+    margin-top: 10%;
+}
+
+#noteit {
+    width: 95%;
+    height: 80%;
 }
 
 .dark {
@@ -198,10 +234,11 @@ body {
     }
     .overlay a {
         padding: 2%;
+        font-size: 1.8em;
     }
     .overlay span {
         padding: 2%;
-        font-size: 2.5em;
+        font-size: 1.8em;
     }
     .overlay .closebtn {
         top: 6%;
@@ -221,5 +258,9 @@ body {
     .gradecontent {
         top: 6%;
         margin-top: 6%;
+    }
+    #noteit {
+        width: 100%;
+        height: 90%;
     }
 }

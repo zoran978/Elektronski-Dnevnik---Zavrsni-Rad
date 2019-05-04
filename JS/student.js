@@ -1,9 +1,9 @@
 //reg exp
 let namereg = /^[a-z\s]*$/i
 let lastnamereg = /^[a-z\s]*$/i
-let birthdayreg = /^[a-z0-9\!\@\#\$\%\^\&\*\(\)\_\+\,\<\.\>\/\?\;\:\'\"\[\]\{\}]+$/i
+let birthdayreg = /^[0-9\.]+$/
 let mailreg = /^[a-z0-9\!\@\#\$\%\^\&\*\(\)\_\+\,\<\.\>\/\?\;\:\'\"\[\]\{\}]+$/i
-let jmbgreg = /^[a-z0-9\!\@\#\$\%\^\&\*\(\)\_\+\,\<\.\>\/\?\;\:\'\"\[\]\{\}]+$/i
+let jmbgreg = /^[0-9]+$/
 //array for students
 let students = new Array;
 //appends form for student info
@@ -30,7 +30,7 @@ function studentinfo() {
         </div>
         <div class="form-group">
           <label for="formGroupExampleInput">JMBG</label>
-          <input type="text" class="form-control" id="jmbg" placeholder="JMBG">
+          <input type="text" class="form-control" id="jmbg" placeholder="JMBG"  minlength="13" maxlength="13">
         </div>
         </form>
         <button type="button" value="Submit" id="addstudent" class="btn btn-warning">Submit</button>
@@ -94,15 +94,20 @@ $(document).on('click', "#addstudent", function () {
     }
     //if everything is ok then we push students in to an array and then we push that array in to the localstorage
     if (testnam && testlname && testbirthd && testsoc && testmail) {
-        students.push(new Student(name2, lastName2, birthdayx2, gmail2, social2))
-        console.log(students)
-        localStorage.setItem('students', JSON.stringify(students))
-        alert('Student added!')
-        //return main background
-        $('#studentform').hide(500)
-        $('#mainsection').append(` <div>
-        <h3 id="secondarytitle" class="secondaryttl">University of web development</h3>
-    </div>`)
+        if (social2.length != 13) {
+            alert('Invalid JMBG')
+        }
+        else {
+            students.push(new Student(name2, lastName2, birthdayx2, gmail2, social2))
+            console.log(students)
+            localStorage.setItem('students', JSON.stringify(students))
+            alert('Student added!')
+            //return main background
+            $('#studentform').hide(500)
+            $('#mainsection').append(` <div>
+            <h3 id="secondarytitle" class="secondaryttl">University of web development</h3>
+        </div>`)
+        }
     }
     //if user didnt fill out all of the fields we warn him
     else {

@@ -1,4 +1,5 @@
 let gradingarray = new Array();
+let testsname = /^[a-z\s]*$/i
 
 function Studentobj(nameandlastname, jsgrade, cssgrade, htmlgrade, fngrade) {
   this.nameandlastname = nameandlastname
@@ -9,31 +10,43 @@ function Studentobj(nameandlastname, jsgrade, cssgrade, htmlgrade, fngrade) {
 }
 
 let gradestudent = () => {
-  $('#myNav').css('width', '0%')
-  $('#mainsection').empty()
-
   let ids = $('#nameandlastname').val()
   let jsgr = $('#jsgrade').val()
   let cssgr = $('#cssgrade').val()
   let htmlgrade = $('#htmlgrade').val()
   let finalgrade = parseFloat((parseInt(jsgr) + parseInt(cssgr) + parseInt(htmlgrade)) / 3)
 
+  let testing = testsname.test(ids)
+
   if (ids == "" || jsgr == "" || cssgr == "" || htmlgrade == "") {
     alert('Please fill out all of the fields above')
   }
   else {
-    finalgrade = finalgrade.toFixed(2)
-    gradingarray.push(new Studentobj(ids, jsgr, cssgr, htmlgrade, finalgrade))
-    table()
-    $('#nameandlastname').val(null)
-    $('#jsgrade').val(null)
-    $('#cssgrade').val(null)
-    $('#htmlgrade').val(null)
+    if (testing == false) {
+      alert('Please enter valid name')
+    }
+    else {
+      if ((jsgr < 6 || jsgr > 10) || (cssgr < 6 || cssgr > 10) || (htmlgrade < 6 || htmlgrade > 10)) {
+        alert('Grade must be between 6-10')
+      }
+      else {
+        finalgrade = finalgrade.toFixed(2)
+        gradingarray.push(new Studentobj(ids, jsgr, cssgr, htmlgrade, finalgrade))
+        table()
+        $('#nameandlastname').val(null)
+        $('#jsgrade').val(null)
+        $('#cssgrade').val(null)
+        $('#htmlgrade').val(null)
+      }
+    }
   }
 }
 
 function table() {
-  $('#gradtab').remove()
+  $('#myNav').css('width', '0%')
+  $('#mainsection').empty()
+  $('#gradcont').hide()
+  $(".overlay-content").css("display", "block");
   $('#mainsection').append(`
   <table class="table table-md-responsive" id="gradtab">
   <thead class="thead-light">

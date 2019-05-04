@@ -63,4 +63,5 @@ function logOut() {
     $('#disp').css('display', 'none')
     $('#loggs').css('display', 'block')
     $('#logger').css('display', 'none')
+    $('#myNav').css('width', '0%')
 }
